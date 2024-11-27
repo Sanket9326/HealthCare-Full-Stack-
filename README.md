@@ -1,27 +1,57 @@
-# HealthcareFrontend
+# HealthCare+ (Full Stack)  
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.10.
+## Overview  
+**HealthCare+** is an online appointment booking system designed to streamline the process of scheduling and managing appointments in the healthcare sector. The system offers distinct user and admin panels with tailored functionalities, ensuring efficiency and ease of use.  
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features  
 
-## Code scaffolding
+### **User Panel**  
+- **Login and Sign-up:**  
+  - Secure authentication using Angular services and Spring Boot.  
+  - Credentials are verified by the backend before being stored.  
+- **Forgot Password:**  
+  - Retrieve password through email-based recovery.  
+- **Appointment Management:**  
+  - Book appointments by selecting doctors and available slots.  
+  - Cancel appointments.  
+  - View appointment history with real-time status tracking (e.g., completed, canceled).  
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### **Admin Panel**  
+- **Doctor Management:**  
+  - Add, remove, or update doctor profiles and availability.  
+- **Appointment Oversight:**  
+  - Manage completed appointments.  
+  - Remove appointments canceled due to unforeseen reasons.  
+- **System Maintenance:**  
+  - Update doctor schedules and oversee system operations.  
 
-## Build
+### **Email Notifications**  
+Automated email notifications for:  
+- Appointment booking confirmations.  
+- Appointment cancellations.  
+- Status updates (completed or canceled).  
+- Password recovery assistance.  
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## Technology Stack  
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### **Frontend**  
+- Angular (HTML, CSS, TypeScript)  
+- Angular Services for temporary credential storage and API interaction  
 
-## Running end-to-end tests
+### **Backend**  
+- Spring Boot (RESTful APIs)  
+- Spring Security for authentication  
+- Email services integrated using JavaMail  
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### **Database**  
+- MySQL (or any relational database) for data storage  
 
-## Further help
+### **Other Tools and Libraries**  
+- Bootstrap/Angular Material for responsive UI design  
+- Postman for API testing  
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+---
