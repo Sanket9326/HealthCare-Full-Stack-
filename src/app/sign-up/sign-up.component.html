@@ -1,0 +1,24 @@
+<div class="main-container">
+    <div class="signup-container">
+      <label>First Name</label>
+      <input #fname required placeholder="Enter first name">
+      
+      <label>Last Name</label>
+      <input #lname required placeholder="Enter last name">
+      
+      <label>Contact Number</label>
+      <input #mob required placeholder="Enter mobile number">
+      
+      <label>Email</label>
+      <input #username required placeholder="Enter Email">
+      
+      <label>Password</label>
+      <input #password required placeholder="Set Password">
+      
+      <li>Length must be 8</li>
+      <li>At least 1 special character, digit, number</li>
+      
+      <button (click)="onClick(fname.value,lname.value,mob.value,username.value,password.value)">SignUp</button>
+    </div>
+  </div>
+  

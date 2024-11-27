@@ -1,0 +1,174 @@
+.admin-cont {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    font-family: 'Arial', sans-serif;
+}
+
+.admin-cont h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.admin-cont h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #444;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Section containers */
+.add-cont, .update-time-cont, .remove-cont, .all-data-cont, .appointment-data-cont {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+/* Labels */
+label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* Input styles */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #2196F3;
+    outline: none;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.add-btn {
+    background-color: #4CAF50;
+}
+
+.add-btn:hover {
+    background-color: #45a049;
+}
+
+.update-time-btn {
+    background-color: #2196F3;
+}
+
+.update-time-btn:hover {
+    background-color: #1e88e5;
+}
+
+.remove-btn {
+    background-color: #f44336;
+}
+
+.remove-btn:hover {
+    background-color: #d32f2f;
+}
+
+.appointment-cancel-btn {
+    background-color: #f44336;
+}
+
+.appointment-cancel-btn:hover {
+    background-color: #d32f2f;
+}
+
+.appointment-done-btn {
+    background-color: #4CAF50;
+}
+
+.appointment-done-btn:hover {
+    background-color: #45a049;
+}
+
+/* Appointment items */
+.appointment-item {
+    list-style-type: none;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.appointment-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+}
+
+/* Appointment details */
+.appointment-details, .appointment-details-cont {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 0.95rem;
+}
+
+.appointment-details span, .appointment-details-cont span {
+    flex: 1 1 calc(50% - 10px);
+    color: #555;
+}
+
+.appointment-details span strong, .appointment-details-cont span strong {
+    color: #333;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .admin-cont {
+        padding: 15px;
+    }
+
+    .appointment-details, .appointment-details-cont {
+        flex-direction: column;
+    }
+
+    .appointment-details span, .appointment-details-cont span {
+        flex: none;
+    }
+
+    input[type="text"], button {
+        font-size: 0.9rem;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+    }
+}

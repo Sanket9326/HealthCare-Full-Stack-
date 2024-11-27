@@ -1,0 +1,81 @@
+<div class="admin-cont">
+  <h1>Admin Panel</h1>
+
+  <div class="all-data-cont">
+    <h3>Available Appointments</h3>
+    <ul>
+      <li *ngFor="let record of allData" class="appointment-item">
+        <div class="appointment-details">
+          <span><strong>Doctor ID:</strong> {{record.detailsId}}</span>
+          <span><strong>Name:</strong> {{record.doctorName}}</span>
+          <span><strong>Speciality:</strong> {{record.speciality}}</span>
+          <span><strong>Available Time:</strong> {{record.availableTime}}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="appointment-data-cont">
+    <h3>Pending Appointments</h3>
+    <ul>
+      <li *ngFor="let appointment of appointmentData">
+        <div class="appointment-details-cont">
+          <span><strong>Appointment Id :</strong> {{appointment.appointmentId}} </span>
+          <span><strong>Username :</strong> {{appointment.username}} </span>
+          <span><strong>Doctor Name :</strong> {{appointment.doctorName}} </span>
+          <span><strong>Appointment Date :</strong> {{appointment.appointmentDate}} </span>
+          <span><strong>Appointment Time :</strong> {{appointment.appointmentTime}} </span>
+          <button class="appointment-cancel-btn" (click)="addRecord(appointment.appointmentId,appointment.username,appointment.doctorName,appointment.appointmentDate,appointment.appointmentTime,'false')">Cancelled</button>
+          <button class="appointment-done-btn" (click)="addRecord(appointment.appointmentId,appointment.username,appointment.doctorName,appointment.appointmentDate,appointment.appointmentTime,'true')">Completed</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+  
+
+  <div class="add-cont">
+    <h3>Add New Doctor</h3>
+    <label>Doctor Name</label>
+    <input type="text" #name placeholder="Doctor Name" />
+    <label>Speciality</label>
+    <input type="text" #speciality placeholder="Speciality" />
+    <label>Available Time</label>
+    <input type="text" #time placeholder="Available time" />
+    <button
+      class="add-btn"
+      type="submit"
+      (click)="addData(name.value, speciality.value, time.value)"
+    >
+      Add Doctor
+    </button>
+  </div>
+
+  <div class="update-time-cont">
+    <h3>Update Doctor Time</h3>
+    <label>Doctor ID</label>
+    <input type="text" #updateId placeholder="Doctor ID" />
+    <label>New Available Time</label>
+    <input type="text" #newTime placeholder="Available time" />
+    <button
+      class="update-time-btn"
+      type="submit"
+      (click)="updateTime(updateId.value, newTime.value)"
+    >
+      Update Time
+    </button>
+  </div>
+  
+  <div class="remove-cont">
+    <h3>Remove Doctor</h3>
+    <label>Doctor ID</label>
+    <input type="text" #removeId placeholder="Doctor ID" />
+    <button
+      class="remove-btn"
+      type="submit"
+      (click)="removeDoctor(removeId.value)"
+    >
+      Remove Doctor
+    </button>
+  </div>
+  
+</div>

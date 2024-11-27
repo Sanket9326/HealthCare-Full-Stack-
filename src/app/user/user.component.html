@@ -1,0 +1,77 @@
+<div class="main-container">
+  <table class="appointment-table">
+    <thead>
+      <tr>
+        <th>Doctor Name</th>
+        <th>Specialty</th>
+        <th>Available Time</th>
+        <th>Appointment Date</th>
+        <th>Enter Time</th>
+        <th>Book Appointment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of allData">
+        <td #doc> {{data.doctorName}} </td>
+        <td> {{data.speciality}} </td>
+        <td #ava> {{data.availableTime}} </td>
+        <td><input required #date type="date" class="date-input" /></td>
+        <td><input required #apo type="time" class="time-input" /></td>
+        <td><button (click)="getAppointmentData(doc.innerText,ava.innerText,date.value,apo.value)"class="book-button">Book Appointment</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<button
+  class="btn-appointment"
+  type="submit"
+  (click)="getCurrentAppointments()"
+>
+  Cancel Appointments
+</button>
+<div class="appointment-cont" *ngIf="appointmentCancelController">
+  <li class="appointment-list" *ngFor="let appointment of appointments">
+    <p>
+      <strong>Doctor Name : </strong> {{ appointment.doctorName }}
+      <br />
+      <strong>Appointment Date : </strong> {{ appointment.appointmentDate }}
+      <br />
+      <strong>Appointment Time : </strong> {{ appointment.appointmentTime }}
+      <br />
+    </p><br />
+     <button class="cancel-btn" (click)="cancelAppointment(appointment.appointmentId,appointment.doctorName,appointment.appointmentDate,appointment.appointmentTime)">Cancel</button>
+  </li>
+</div>
+
+<button class="btn-history" type="submit" (click)="getRecords()">
+  Get History
+</button>
+
+<div class="history-container" *ngIf="histroyController">
+  <h3>Appointment History</h3>
+  <ul class="history-list">
+    <li class="history-item" *ngFor="let record of records">
+      <p>
+        <strong>Doctor Name:</strong> {{ record.doctorName }}<br />
+        <strong>Date:</strong> {{ record.date }}<br />
+        <strong>Time:</strong> {{ record.time }}<br />
+        <strong>Status:</strong>
+        <span
+          [class.completed]="record.completed === true"
+          [class.cancelled]="record.completed !== true"
+        >
+          {{ record.completed === true ? "Completed" : "Cancelled" }}
+        </span>
+      </p>
+    </li>
+  </ul>
+</div>
+
+<div class="reponse-container" *ngIf="flag">
+  <p>Your appointment has been scheduled!</p>
+  <button type="submit" class="book-button" [routerLink]="['/home']">
+    Homepage
+  </button>
+</div>

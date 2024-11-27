@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="login-container">
+    <label>Username</label>
+    <input #email required placeholder="Enter user id" />
+    <label>Password</label>
+    <input #pass required placeholder="Enter password" type="password" />
+    <button (click)="userLogin(email.value, pass.value)">User Login</button>
+    <button (click)="adminLogin(email.value, pass.value)">Admin Login</button>
+    <button (click)="forgotPassword()">Forgot Password</button>
+  </div>
+  
+</div>
